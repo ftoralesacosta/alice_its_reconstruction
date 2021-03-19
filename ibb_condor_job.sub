@@ -1,0 +1,21 @@
+# 2 hour job
++JobFlavour = "longlunch"
+
+request_cpus = 4
+
+# 4GB RAM
+request_memory = 4096
+
+# 80 GB scratch disk
+request_disk = 8192000
+
+
+executable              = job.sh
+arguments               = $(ClusterId) $(ProcId) ibb
+
+output                  = job.$(ClusterId).$(ProcId).out
+error                   = job.$(ClusterId).$(ProcId).err
+log                     = job.$(ClusterId).log
+
+queue 20
+

@@ -1,0 +1,22 @@
+# 2 hour job
++JobFlavour = "longlunch"
+
+request_cpus = 4
+
+# 4GB RAM
+request_memory = 4096
+
+# 80 GB scratch disk
+request_disk = 8192000
+
+
+executable              = job.sh
+arguments               = $(ClusterId) $(ProcId) ibt 
+
+#user must make out_files etc. directories if they do not exist already
+output                  = out_files/job.$(ClusterId).$(ProcId).out
+error                   = err_files/job.$(ClusterId).$(ProcId).err
+log                     = log_files/job.$(ClusterId).log
+
+queue 20
+
